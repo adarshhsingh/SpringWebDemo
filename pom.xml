@@ -3,14 +3,25 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<!--
+	Want to learn more about POM ?
+	See : http://maven.apache.org/pom.html#What_is_the_POM
+	-->
+
+	<!--
+	See: http://maven.apache.org/pom.html#Maven_Coordinates
+	-->
 	<groupId>com.learn</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>spring-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>SpringInitializer</name>
 	<description>Demo project for Spring Boot</description>
 
+	<!-- This manages dependency from a parent source.
+	 See : https://stackoverflow.com/questions/8026447/what-does-the-parent-tag-in-maven-pom-represent
+	 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,6 +29,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<!--
+	See: http://maven.apache.org/pom.html#Properties
+	-->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -25,10 +39,24 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.20</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!--<dependency>
+
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,7 +65,13 @@
 		</dependency>
 	</dependencies>
 
+	<!--
+	See:
+	http://maven.apache.org/pom.html#Build_Settings
+	http://maven.apache.org/pom.html#Build_Element
+	 -->
 	<build>
+		<!--http://maven.apache.org/pom.html#Plugins-->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
