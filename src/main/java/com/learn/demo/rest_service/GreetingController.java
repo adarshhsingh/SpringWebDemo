@@ -28,7 +28,7 @@ public class GreetingController {
      *
      * @RequestMapping annotation ensures that HTTP requests to /greeting are mapped to the greeting() method.
      */
-    @RequestMapping(method = RequestMethod.GET, value = "/greetings")
+    @RequestMapping(method = RequestMethod.GET, value = "/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue="World") String name) {
 
 
@@ -43,5 +43,17 @@ public class GreetingController {
         */
 
         return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
+    }
+
+    /**
+     * This controller is to pick default request when opening the URL
+     *
+     * @param name
+     * @return
+     */
+    @RequestMapping
+    public String welcome(@RequestParam(value = "name") String name) {
+
+        return "Hi Adarsh !! Your SpringWebDemo is up and running using AWS - Elastic Beanstalk.";
     }
 }
